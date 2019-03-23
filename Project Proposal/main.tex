@@ -1,0 +1,185 @@
+
+\documentclass[journal]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{array}
+ \usepackage{makecell,interfaces-makecell}
+
+
+
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
+
+\title{Arduino Based Computer Controlling Using Hand Gestures}
+
+
+\author{Deepika Teegapuram, Student ID: 200415938,~\IEEEmembership{Graduate Student,~University~of~Regina}
+        %other authors go below
+        %Bob~Builder,~\IEEEmembership{Student,~University~of~Regina,}
+        %and~Noob~McScrubb,~\IEEEmembership{Student,~University~of~Regina}
+        }
+\onecolumn
+
+% The paper headers
+% This should either be the name of the journal or the 
+% first four(ish) words of the paper
+\markboth{Writing a Project Proposal, Mar~06~2019}%
+{Shell \MakeLowercase{\textit{et al.}}: Design, Template, Computer Science }
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+
+% Note that keywords are not normally used for peerreview papers.
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+
+
+\section{Introduction}
+
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{T}{he} purpose of this paper is to make a modification to the existing project to support additional features. The source project, published by Smart Technology in www.hackster.io in 2017, describes a Gesture-Controlled System[1] for operating computers with the combination of Arduino and Python. 
+
+\par Instead of using human touch required devices like Keyboard, Mouse or Joystick, we can use sensors to understand the hand gestures and to perform necessary actions in the computer. The following are the actions listed by the source project on the VLC media player by using distance between Ultrasonic Sensors and the hand. 
+\begin{itemize}
+  \item Play or Pause the video
+  \item Increase or Decrease the volume
+  \item Forward or Rewind the video
+\end{itemize}
+
+The distance changes the type of actions to be performed. These six operations are developed by using 2 Ultrasonic Sensors.
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Novel Contribution}
+
+The aim is to carry forward an existing functionality with the addition of supporting three more independent applications. The information does not flow from one application to the other. The three features are listed below.
+\begin{itemize}
+  \item To switch between the tabs of the browser and to scroll up/down the web pages
+  \item Open the webcam and record a video
+  \item Shutdown the Computer[2]
+\end{itemize}
+All the above characteristics are controlled by hand gestures without using any input device.
+\section{Materials Required}
+
+According to the list provided from the source website, the following materials are needed:
+\begin{itemize}
+  \item Arduino UNO
+  \item Ultrasonic sensors(HC-SR04)-3
+  \item Connecting Wires
+  \item The USB cable for connecting Arduino
+  \item A Laptop
+\end{itemize}
+
+\section{Milestones}
+The milestones are set to track the progress of the project and to deliver the project within the deadline.
+
+\begin{center}
+\begin{tabular}{ | m{10em} | m{4cm}| m{8cm} | } 
+\hline
+ Milestone 1 & Mar 8, 2019 & All the required materials are gathered. \\ 
+\hline
+Milestone 2 & Mar 9, 2019 & Test if the Integration between Python and Arduino is working \\ 
+\hline
+Milestone 3 & Mar 13, 2019 & Initial Assembly for replicating the existing project and testing the functionality and start the documentation\\ 
+\hline
+Milestone 4 & Mar 17, 2019 & Write up the code and assemble the connections for achieving feature 1 and update the document\\ 
+\hline
+Milestone 5 & Mar 24, 2019 & Make connections and prepare code for achieving feature 2 and update the document\\ 
+\hline
+Milestone 6 & Apr 1, 2019 & Develop feature 3 and update the document\\ 
+\hline
+Milestone 7 & Apr 7, 2019 & Test if all the features are working independently \\ 
+\hline
+Milestone 8 & Apr 10, 2019 & complete the documentation and programming and commit in GitHub \\ 
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+\section{Motivation}
+Nowadays, we see most of the LCD Screens are supporting the Finger-Touch Technology. The idea of the author behind this project is to build a Human Machine Interface (HMI) by reducing the Touch-Based Systems and replacing them with Sensor-Based Systems.  The idea of integrating this project with Python has unveiled a new dimension to the Arduino Programming. With the support of sensors, more features can be added to improve a human interaction with the computer.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Team Role}
+This is an individual project. I will be doing the documentation as well as the coding in parallel. It is my responsibility to design, code and test this project. I will update and commit the code and documentation in GitHub on a regular basis.
+
+\section{Summary}
+ It is an enhancement of an existing project by adding more features to it. Since the solution provided by the author of this project has given the list of libraries for Arduino to interact with the Computer. Also, there are many components in this project, they need good amount of time to develop each property and get the results as expected. Goals are set to reach the Milestones defined on time. %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem
+ TTechnology, S. and Arduino, A. (2017). Amazing Control Computer Using Hand Motion And Arduino. [online] Hackster.io. Available at: https://www.hackster.io/smart-tech/amazing-control-computer-using-hand-motion-and-arduino-d933f1 [Accessed 2 Mar. 2019].
+
+\bibitem
+YYouTube. (2018). Python code for Shutdown and Restart your System. [online] Available at: https://www.youtube.com/watch?v=J77J232QdIE [Accessed 7 Mar. 2019].
+\end{thebibliography}
+
+
+% that's all folks
+\end{document}
+
