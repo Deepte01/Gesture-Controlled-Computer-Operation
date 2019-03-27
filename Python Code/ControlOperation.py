@@ -23,6 +23,9 @@ while 1:
   
     if "Decrease" in incoming:
         pyautogui.hotkey('ctrl','down')
+        
+    if "Decrease" in incoming:
+        pyautogui.hotkey('ctrl','down')
   
     
   
