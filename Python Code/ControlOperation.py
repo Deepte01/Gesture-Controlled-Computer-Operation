@@ -18,15 +18,11 @@ while 1:
     if "Forward" in incoming:
         pyautogui.hotkey('ctrl','right')
 
-    if "Increase" in incoming:
+    if "Increase" or "pageup" in incoming:
         pyautogui.hotkey('ctrl','up')
   
-    if "Decrease" in incoming:
-        pyautogui.hotkey('ctrl','down')
-        
-    if "Decrease" in incoming:
-        pyautogui.hotkey('ctrl','down')
-  
+    if "Decrease" or "pagedown" in incoming:
+        pyautogui.hotkey('ctrl','down') 
     
   
     incoming =""
