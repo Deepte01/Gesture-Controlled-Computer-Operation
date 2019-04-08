@@ -18,11 +18,22 @@ while 1:
     if "Forward" in incoming:
         pyautogui.hotkey('ctrl','right')
 
-    if "Increase" or "pageup" in incoming:
+    if "Increase" in incoming:
         pyautogui.hotkey('ctrl','up')
+
+    if "pageup" in incoming:
+        pyautogui.scroll(100)
+
+    if "pagedown" in incoming:
+        pyautogui.hotkey(-100)
   
-    if "Decrease" or "pagedown" in incoming:
-        pyautogui.hotkey('ctrl','down') 
+    if "Decrease" in incoming:
+        pyautogui.hotkey('ctrl','down')
+
+    if 'change' in incoming_data:                  # if incoming data is 'change'
+        pyautogui.keyDown('alt')                   # performs "alt+tab" operation which switches the tab
+        pyautogui.press('tab')
+        pyautogui.keyUp('alt')
     
   
     incoming =""
