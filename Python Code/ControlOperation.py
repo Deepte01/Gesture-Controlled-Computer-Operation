@@ -3,7 +3,7 @@ import time
 import pyautogui
 import cv2
 import numpy as np
-
+import os
 
 ArduinoSerial=serial.Serial('com3',9600)
 time.sleep(2)
@@ -33,10 +33,14 @@ while 1:
     if "Decrease" in incoming:
         pyautogui.hotkey('ctrl','down')
 
-    if 'change' in incoming:                  # if incoming data is 'change'
-        pyautogui.keyDown('alt')                   # performs "alt+tab" operation which switches the tab
-        pyautogui.press('tab')
-        pyautogui.keyUp('alt')
+    if 'change' in incoming:
+        pyautogui.hotkey('ctrl','tab')
+        #pyautogui.keyDown('alt')                   # performs "alt+tab" operation which switches the tab
+        #pyautogui.press('tab')
+        #pyautogui.keyUp('alt')
+        
+    if 'ShutDown' in incoming:
+        os.system("Shutdown /s /t 1")        
         
     if 'RecordVideo' in incoming:
         cap=cv2.VideoCapture(0)
