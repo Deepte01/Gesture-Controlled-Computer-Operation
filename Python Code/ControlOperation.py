@@ -7,6 +7,7 @@ import os
 
 ArduinoSerial=serial.Serial('com3',9600)
 time.sleep(2)
+count=0;
 
 while 1:
     incoming=str(ArduinoSerial.readline())
@@ -43,6 +44,7 @@ while 1:
         os.system("Shutdown /s /t 1")        
         
     if 'RecordVideo' in incoming:
+        count=count+1
         cap=cv2.VideoCapture(0)
         fourcc=cv2.VideoWriter_fourcc(*'XVID')
         out=cv2.VideoWriter('output.avi',fourcc,20.0,(640,480))
@@ -56,6 +58,9 @@ while 1:
         cap.release()
         out.release()
         cv2.destroyAllWindows()
+
+    if 'quit' in incoming:
+        pyautogui.hotkey('ctrl','q')
   
     incoming =""
    
