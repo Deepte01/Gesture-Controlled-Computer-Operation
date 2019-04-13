@@ -83,35 +83,33 @@ if (lDistance>15 && lDistance<=25)
   //distL =dist;
   if (lDistance>15 && lDistance<=25)
   {
-    Serial.println("Volume Locked");
     while(lDistance>15 && lDistance<=25)
     {
       lDistance=calculateDistance(leftTrigPin,leftEchoPin);
     //  distL =dist;
       if (lDistance<=20) //Hand pushed in 
-      {Serial.print
-    ((String)"Increase, lDistance: "+lDistance); delay (300);}
+      {Serial.println((String)"Increase, lDistance: "+lDistance); delay (300);}
       if (lDistance>20) //Hand pulled out
       {Serial.println ((String)"Decrease, lDistance: "+lDistance); delay (300);}
     }
   }
 }
 
-if (lDistance>25 && lDistance<=35)
+if (lDistance>25 && lDistance<=40)
 {
   delay(100); //Hand Hold Time
   lDistance=calculateDistance(leftTrigPin,leftEchoPin);
   //distL =dist;
-  if (lDistance>25 && lDistance<=35)
+  if (lDistance>25 && lDistance<=40)
   {
     //Serial.println("Page Up");
-    while(lDistance>25 && lDistance<=35)
+    while(lDistance>25 && lDistance<=40)
     {
       lDistance=calculateDistance(leftTrigPin,leftEchoPin);
     //  distL =dist;
-      if (lDistance<=30) //Hand pushed in 
+      if (lDistance<=32 && lDistance>25) //Hand pushed in 
       {Serial.println ((String)"pagedown, lDistance: "+lDistance); delay (300);}
-      if (lDistance>30) //Hand pulled out
+      if (lDistance>32 && lDistance<=40) //Hand pulled out
       {Serial.println ((String)"pageup, lDistance: "+lDistance); delay (300);}
     }
   }
@@ -122,14 +120,46 @@ rDistance=calculateDistance(rightTrigPin,rightEchoPin);
 
 if(rDistance>2 && rDistance<8)
 {
-  delay(100); //Hand Hold Time
+    delay(100); //Hand Hold Time
+  rDistance=calculateDistance(rightTrigPin,rightEchoPin);
+  //distL =dist;
+  if (rDistance>2 && rDistance<8)
+  {
+      Serial.println ((String)"ShutDown, rDistance: "+rDistance); delay (300);
+      }
+  }
+  
+if (rDistance>8 && rDistance<=20)
+{
+    delay(100); //Hand Hold Time
   rDistance=calculateDistance(rightTrigPin,rightEchoPin);
   Serial.println ((String)"rDistance: "+rDistance);
-    if (rDistance>2 && rDistance<=8)
+    if (rDistance>8 && rDistance<=20)
   {
-    Serial.println("RecordVideo");
-    delay(500);
-    }
+    Serial.println("RecordVideo"); delay (300);
+   // delay(500);
+    }      
+}
+if (rDistance>20 && rDistance<=30)
+{
+    delay(100); //Hand Hold Time
+  rDistance=calculateDistance(rightTrigPin,rightEchoPin);
+  Serial.println ((String)"rDistance: "+rDistance);
+    if (rDistance>20 && rDistance<=30)
+  {
+    Serial.println("change"); delay (300);
+   // delay(500);
+    }      
+}
+if(rDistance>30 && rDistance<50)
+{
+    delay(100); //Hand Hold Time
+  rDistance=calculateDistance(rightTrigPin,rightEchoPin);
+  //distL =dist;
+  if (rDistance>30 && rDistance<60)
+  {
+      Serial.println ((String)"quit, rDistance: "+rDistance); delay (300);
+      }
   }
 delay(200);     
 }
