@@ -1,3 +1,13 @@
+// Arduino Based Gesture Controlling the Computer
+/*
+ * Designing a gesture controlled computer operations
+ * these features are implemented with Arduino and Python
+ * These features are unique and performed only with
+ * 2 ultrasonic sensors.
+ * 
+ * Author - Deepika Teegapuram
+ * Student ID - 200415938 
+ */
 //pin numbers for left Ultrasonic Sensor
 int leftTrigPin=13;
 int leftEchoPin=11;
