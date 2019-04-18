@@ -1,1 +1,4 @@
-This is read me for understanding the Arduino Code.
+#This is read me for understanding the Arduino Code.
+The calculateDistance function calculates the distance between the ultrasonic sensor and hand.
+lDistance is the distance covered by the left Ultrasonic Sensor.
+rDistance is the distance covered by the right Ultrasonic Sensor.
